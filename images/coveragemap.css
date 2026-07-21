@@ -1,0 +1,96 @@
+#imap2message {
+	display: flex;
+	justify-content: center;
+}
+
+.coveragelogo {
+	background-size: contain !important;
+	display: flex;
+	justify-items: center !important;
+	min-height: 90px;
+	min-width: 250px;
+	padding: 5px 0 !important;
+	margin: 0 7px;
+}
+.coverageimage {
+	display: none;
+	width: 100%;
+	height: auto;
+	background-size: contain;
+}
+.coveragetooltip {
+	background: #ffffff none repeat scroll 0 0;
+	border-radius: 7px;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	margin: 5px;
+	padding: 5px;
+}
+
+.ct_title {
+	
+}
+
+.google-visualization-tooltip {
+	border-radius: 10px !important;
+	padding-top: 24px !important;
+	max-width: 40% !important;
+	font-size: 20px !important;
+	padding-top: 20px !important;
+	display: none !important;
+
+}
+
+.google-visualization-tooltip-item span {
+	font-family: Sintony !important;
+	font-size: 1.8vw;
+	margin-left: 12px;
+}
+
+#cboxClose {
+    bottom: -6px !important;
+    color: #fff;
+    display: block;
+    font-size: 0.9em;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute;
+    right: 3px !important;
+    text-transform: uppercase;
+}
+
+#cboxContent {
+    border-radius: 6px;
+}
+
+.logo_altitude{background:url(http://www.pokernight.com/images/AltitudeSports.jpg) no-repeat center center ;}
+.logo_cbs{background:url(http://www.pokernight.com/images/CBSSportsNetwork.png) no-repeat center center  ;}
+.logo_csnchicago{background:url(http://www.pokernight.com/images/CSNChicago.jpg) no-repeat center center  ;}
+.logo_csnatlantic{background:url(http://www.pokernight.com/images/CSNMidAtlantic.jpg) no-repeat center center  ;}
+.logo_csnphilidelphia{background:url(http://www.pokernight.com/images/CSNPhilidelphia.jpg) no-repeat center center  ;}
+.logo_rootsp{background:url(http://www.pokernight.com/images/RootSports.png) no-repeat center center  ;}
+.logo_rootsnw{background:url(http://www.pokernight.com/images/RootSports.png) no-repeat center center  ;}
+.logo_rootssw{background:url(http://www.pokernight.com/images/RootSports.png) no-repeat center center  ;}
+
+
+
+
+@media screen and (min-width: 729px; max-width: 11138px){
+	.coveragelogo {min-width: 150px !important; }}
+
+@media screen and (max-width: 728px){
+	.coveragelogo {
+		min-width: 90px !important; 
+		min-height: 50px !important;
+		flex-flow: row nowrap !important;
+
+
+		}}
+
+.cfrow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
