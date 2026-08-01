@@ -314,6 +314,17 @@ h3 {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.72));
 }
 
+/* Hero variant — lighter wash so the player/celebrity photos show through,
+   with a left-heavy gradient to keep the headline and buttons readable */
+.section.collage.hero::before {
+  background: linear-gradient(
+    90deg,
+    rgba(6, 6, 10, 0.78),
+    rgba(6, 6, 10, 0.55) 55%,
+    rgba(6, 6, 10, 0.42)
+  );
+}
+
 /* ---------- Platform logo wall (Watch Live on These Platforms) ---------- */
 .platform-wall {
   display: grid;

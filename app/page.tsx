@@ -18,8 +18,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* ============ HERO ============ */}
-      <section className="section dark-tex" style={{ padding: "0" }}>
+      {/* ============ HERO (photo-collage background, like the live site fold) ============ */}
+      <section className="section collage hero" style={{ padding: "0" }}>
         <div
           className="wrap"
           style={{
