@@ -45,7 +45,7 @@ export default function HomePage() {
               Shaun Deeb and more. {episodeCount()}+ episodes and counting.
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-              <a href={site.watchLive[0].url} target="_blank" rel="noopener noreferrer" className="btn btn-purple">
+              <a href={site.watchLive[0].url} target="_blank" rel="noopener noreferrer" className="btn btn-live">
                 ▶ Watch Live
               </a>
               <Link href="/episodes" className="btn btn-outline">

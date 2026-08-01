@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Oswald } from "next/font/google";
+import { Inter, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
+// Display font — condensed w/ italics to echo the slanted PNIA logo lettering
+const barlow = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-oswald",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -25,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${oswald.variable}`}>
+    <html lang="en" className={`${inter.variable} ${barlow.variable}`}>
       <body>
         <Navbar />
         <main>{children}</main>

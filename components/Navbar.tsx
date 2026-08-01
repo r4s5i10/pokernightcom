@@ -127,7 +127,7 @@ export default function Navbar() {
           href="https://www.youtube.com/pokernightinamerica"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-purple"
+          className="btn btn-live"
           style={{ padding: "10px 22px", fontSize: 13 }}
         >
           ▶ Watch Live

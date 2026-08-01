@@ -108,7 +108,7 @@ export default function AppPage() {
             Top the app leaderboards for your chance to sit down with the pros on
             Poker Night in America.
           </p>
-          <a href={site.app.ios} target="_blank" rel="noopener noreferrer" className="btn btn-purple">
+          <a href={site.app.ios} target="_blank" rel="noopener noreferrer" className="btn btn-live">
             Get the App
           </a>
         </div>
