@@ -117,7 +117,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ============ PURPLE STRIP ============ */}
+      {/* ============ RED STRIP ============ */}
       <div className="strip">
         <div className="wrap" style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 18, flexWrap: "wrap", padding: "14px 20px" }}>
           <span style={{ color: "#fff", fontFamily: "var(--font-oswald)", fontWeight: 600, fontSize: 17, textTransform: "uppercase", letterSpacing: ".05em" }}>
@@ -129,11 +129,11 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* ============ LATEST EPISODES GRID ============ */}
-      <section className="section">
+      {/* ============ LATEST EPISODES GRID (photo-collage background, like live site) ============ */}
+      <section className="section collage">
         <div className="wrap">
-          <div className="section-head">
-            <h2>Latest Episodes</h2>
+          <div className="section-head on-dark">
+            <h2 style={{ color: "#fff" }}>Latest Episodes</h2>
             <Link href="/episodes" className="view-more">View More »</Link>
           </div>
           <div className="card-grid">
@@ -164,41 +164,37 @@ export default function HomePage() {
       <section className="section dark-tex">
         <div className="wrap">
           <div className="section-head" style={{ borderBottomColor: "#26262e" }}>
-            <h2 style={{ color: "#fff" }}>Where to Watch</h2>
+            <h2 style={{ color: "#fff" }}>Watch Live on These Platforms</h2>
             <Link href="/where-to-watch" className="view-more">View More »</Link>
           </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(190px, 1fr))",
-              gap: 16,
-            }}
-          >
-            {site.watchLive.map((p) => (
-              <a
-                key={p.name}
-                href={p.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  background: "#141419",
-                  border: "1px solid #26262e",
-                  padding: "26px 18px",
-                  textAlign: "center",
-                  color: "#fff",
-                  fontFamily: "var(--font-oswald)",
-                  fontWeight: 600,
-                  fontSize: 17,
-                  textTransform: "uppercase",
-                  letterSpacing: ".04em",
-                }}
-              >
-                <span style={{ display: "block", color: "#c8102e", fontSize: 26, marginBottom: 10 }}>▶</span>
-                {p.name}
-              </a>
-            ))}
+          <div className="platform-wall">
+            {/* eslint-disable @next/next/no-img-element */}
+            <a href={site.watchLive[0].url} target="_blank" rel="noopener noreferrer">
+              <img src="/logo-youtube.png" alt="YouTube" />
+            </a>
+            <a href={site.watchLive[1].url} target="_blank" rel="noopener noreferrer">
+              <img src="/logo-twitch.png" alt="Twitch" />
+            </a>
+            <a href={site.watchLive[4].url} target="_blank" rel="noopener noreferrer">
+              <img src="/logo-sportstribal.png" alt="SportsTribal TV" />
+            </a>
+            <a href={site.watchLive[3].url} target="_blank" rel="noopener noreferrer">
+              <img src="/logo-localnow.png" alt="Local Now" />
+            </a>
+            <Link href="/where-to-watch">
+              <img src="/logo-edge.png" alt="EDGE" />
+            </Link>
+            <a href={site.watchLive[2].url} target="_blank" rel="noopener noreferrer">
+              <img src="/logo-plex.png" alt="Plex" />
+            </a>
+            {/* eslint-enable @next/next/no-img-element */}
           </div>
-          <p style={{ color: "#a7a7b1", fontSize: 14.5, lineHeight: 1.7, marginTop: 22, maxWidth: 760 }}>
+          <div style={{ textAlign: "center", marginTop: 26 }}>
+            <Link href="/where-to-watch" className="btn btn-red">
+              And More!
+            </Link>
+          </div>
+          <p style={{ color: "#a7a7b1", fontSize: 14.5, lineHeight: 1.7, marginTop: 26, maxWidth: 760 }}>
             {site.coverage}
           </p>
         </div>
