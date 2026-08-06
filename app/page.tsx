@@ -22,7 +22,7 @@ export default function HomePage() {
     <>
       {featured && (
         <section className="compact-hero">
-          <div className="wrap">
+          <div className="wrap compact-hero__content">
             <div className="compact-hero__mast">
               <div>
                 <span className="eyebrow">America’s televised cash game</span>
@@ -38,8 +38,12 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="compact-hero__grid">
+          <div className="compact-hero__stage">
+            <div className="compact-hero__portraits" aria-hidden="true" />
+            <div className="wrap compact-hero__stage-inner">
+              <div className="compact-hero__grid">
               <a className="hero-feature" href={ytUrl(featured.youtubeId)} target="_blank" rel="noopener noreferrer">
                 <Image src={ytThumb(featured.youtubeId, "max")} alt={featured.title} fill priority sizes="(max-width: 900px) 100vw, 66vw" />
                 <span className="hero-feature__shade" />
@@ -66,6 +70,7 @@ export default function HomePage() {
                   ))}
                 </div>
               </aside>
+              </div>
             </div>
           </div>
           <div className="compact-hero__footer">
