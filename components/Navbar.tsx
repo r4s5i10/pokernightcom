@@ -15,6 +15,7 @@ const seasons = [
 const links = [
   { name: "News", href: "/news" },
   { name: "Where to Watch", href: "/where-to-watch" },
+  { name: "Store", href: "/store" },
   { name: "Poker Night App", href: "/poker-night-app" },
 ];
 
@@ -36,22 +37,14 @@ export default function Navbar() {
   };
 
   return (
-    <header
-      style={{
-        background: "#0b0b0e",
-        borderBottom: "1px solid #26262e",
-        position: "sticky",
-        top: 0,
-        zIndex: 100,
-      }}
-    >
+    <header className="site-header">
       <div
         className="wrap"
         style={{ display: "flex", alignItems: "center", gap: 8 }}
       >
         <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10, marginRight: 12, padding: "10px 0" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/pnia-shield.png" alt="Poker Night in America" style={{ height: 52, width: "auto" }} />
+          <img src="/pnia-shield.png" alt="Poker Night in America" style={{ height: 54, width: "auto" }} />
         </Link>
 
         {/* Desktop nav */}
@@ -127,7 +120,7 @@ export default function Navbar() {
           href="https://www.youtube.com/pokernightinamerica"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-live"
+          className="btn btn-red nav-watch"
           style={{ padding: "10px 22px", fontSize: 13 }}
         >
           ▶ Watch Live
@@ -136,7 +129,8 @@ export default function Navbar() {
         {/* Mobile toggle */}
         <button
           className="nav-toggle"
-          aria-label="Menu"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
           onClick={() => setOpen(!open)}
           style={{
             display: "none",
@@ -173,12 +167,30 @@ export default function Navbar() {
       )}
 
       <style jsx>{`
+        .site-header {
+          background: rgba(8, 9, 11, 0.97);
+          border-bottom: 1px solid #25272d;
+          position: sticky;
+          top: 0;
+          z-index: 100;
+          backdrop-filter: blur(12px);
+        }
         @media (max-width: 880px) {
           .nav-desktop {
             display: none !important;
           }
           .nav-toggle {
             display: block !important;
+          }
+          .nav-watch {
+            margin-left: auto;
+          }
+        }
+        @media (max-width: 520px) {
+          .nav-watch {
+            min-height: 40px;
+            padding: 0 12px !important;
+            font-size: 10px !important;
           }
         }
       `}</style>

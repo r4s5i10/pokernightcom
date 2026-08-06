@@ -8,8 +8,9 @@ export function generateStaticParams() {
   return getSeasons().map((s) => ({ season: s.slug }));
 }
 
-export function generateMetadata({ params }: { params: { season: string } }): Metadata {
-  const s = getSeason(params.season);
+export async function generateMetadata({ params }: { params: Promise<{ season: string }> }): Promise<Metadata> {
+  const { season } = await params;
+  const s = getSeason(season);
   return {
     title: s ? `${s.season} Episodes` : "Episodes",
     description: s
@@ -18,8 +19,9 @@ export function generateMetadata({ params }: { params: { season: string } }): Me
   };
 }
 
-export default function SeasonPage({ params }: { params: { season: string } }) {
-  const season = getSeason(params.season);
+export default async function SeasonPage({ params }: { params: Promise<{ season: string }> }) {
+  const { season: seasonSlug } = await params;
+  const season = getSeason(seasonSlug);
   if (!season) notFound();
 
   const epTotal = season.series.reduce((n, ser) => n + ser.episodes.length, 0);

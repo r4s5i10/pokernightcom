@@ -46,7 +46,7 @@ export function getStudio52(): Episode[] {
   return (episodesData as unknown as { studio52: Episode[] }).studio52;
 }
 
-const isEpisodePost = (p: Post) =>
+export const isEpisodePost = (p: Post) =>
   p.categories.some((c) => c === "Episodes" || /^Season \d/.test(c) || /^Series /.test(c));
 
 export function getNewsPosts(): Post[] {

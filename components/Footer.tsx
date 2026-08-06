@@ -52,6 +52,7 @@ export default function Footer() {
             <Link href="/episodes/season-5" style={footLink}>Season 5</Link>
             <Link href="/episodes/season-6" style={footLink}>Season 6</Link>
             <Link href="/news" style={footLink}>News</Link>
+            <Link href="/store" style={footLink}>Official Store</Link>
           </div>
 
           <div>
@@ -98,9 +99,12 @@ export default function Footer() {
           <span style={{ color: "#6f6f7a", fontSize: 12.5 }}>
             © {new Date().getFullYear()} Poker Night in America. All rights reserved.
           </span>
-          <span style={{ color: "#6f6f7a", fontSize: 12.5 }}>
-            Play responsibly. If you or someone you know has a gambling problem, call 1-800-GAMBLER.
-          </span>
+          <div style={{ display: "flex", gap: 18, flexWrap: "wrap" }}>
+            <Link href="/privacy-policy" style={{ color: "#9b9ba4", fontSize: 12.5 }}>Privacy Policy</Link>
+            <span style={{ color: "#6f6f7a", fontSize: 12.5 }}>
+              Play responsibly. If you or someone you know has a gambling problem, call 1-800-GAMBLER.
+            </span>
+          </div>
         </div>
       </div>
     </footer>

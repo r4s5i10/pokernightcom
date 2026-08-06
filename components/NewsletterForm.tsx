@@ -4,11 +4,13 @@ import { useState } from "react";
 export default function NewsletterForm() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
     setStatus("loading");
+    setMessage("");
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
@@ -19,9 +21,12 @@ export default function NewsletterForm() {
         setStatus("success");
         setEmail("");
       } else {
+        const result = await res.json().catch(() => ({}));
+        setMessage(result.error || "Something went wrong — please try again.");
         setStatus("error");
       }
     } catch {
+      setMessage("Something went wrong — please try again.");
       setStatus("error");
     }
   }
@@ -57,7 +62,7 @@ export default function NewsletterForm() {
       </button>
       {status === "error" && (
         <p style={{ width: "100%", color: "#ff6b6b", fontSize: 13.5, margin: "4px 0 0" }}>
-          Something went wrong — please try again.
+          {message || "Something went wrong — please try again."}
         </p>
       )}
     </form>
