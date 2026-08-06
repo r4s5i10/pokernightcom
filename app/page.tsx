@@ -20,65 +20,60 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="home-hero">
-        <div className="home-hero__media" aria-hidden="true">
-          <Image src="/collage-bg.webp" alt="" fill priority sizes="100vw" />
-        </div>
-        <div className="wrap home-hero__inner">
-          <div className="home-hero__copy">
-            <span className="eyebrow eyebrow--light">America’s televised cash game</span>
-            <h1>Big pots.<br /><em>Bigger</em> personalities.</h1>
-            <p>
-              The best players in poker, one table, and absolutely no shortage of action.
-              Watch {episodeCount()}+ episodes and new live cash games from Poker Night in America.
-            </p>
-            <div className="button-row">
-              <a className="btn btn-red" href={site.watchLive[0].url} target="_blank" rel="noopener noreferrer">
-                Watch now <span aria-hidden="true">▶</span>
-              </a>
-              <Link className="btn btn-ghost" href="/episodes">Explore episodes</Link>
-            </div>
-          </div>
-          <div className="home-hero__stamp">
-            <Image src="/pnia-shield.png" alt="Poker Night in America" width={210} height={230} priority />
-            <span>Cards up. Cameras on.</span>
-          </div>
-        </div>
-        <div className="home-hero__ticker" aria-label="Show highlights">
-          <div className="wrap">
-            <span>High-stakes cash games</span><i>♦</i><span>Poker’s biggest names</span><i>♥</i><span>Live &amp; on demand</span><i>♠</i><span>All action. No filler.</span>
-          </div>
-        </div>
-      </section>
-
       {featured && (
-        <section className="section feature-section">
+        <section className="compact-hero">
           <div className="wrap">
-            <div className="section-intro">
-              <div><span className="eyebrow">Fresh from the felt</span><h2>Latest action</h2></div>
-              <Link className="text-link" href="/episodes">All episodes →</Link>
-            </div>
-            <div className="episode-feature">
-              <a className="episode-feature__image" href={ytUrl(featured.youtubeId)} target="_blank" rel="noopener noreferrer">
-                <Image src={ytThumb(featured.youtubeId, "max")} alt={featured.title} fill sizes="(max-width: 900px) 100vw, 66vw" />
-                <span className="play-button" aria-hidden="true">▶</span>
-                <span className="episode-feature__label">Now playing</span>
-              </a>
-              <div className="episode-feature__copy">
-                <span className="eyebrow">{featured.season} · {featured.venue}</span>
-                <h3>{featured.title}</h3>
-                <p>Settle in for table talk, momentum swings, and every decision that makes a cash game worth watching.</p>
-                <a className="text-link" href={ytUrl(featured.youtubeId)} target="_blank" rel="noopener noreferrer">Watch the episode ↗</a>
+            <div className="compact-hero__mast">
+              <div>
+                <span className="eyebrow">America’s televised cash game</span>
+                <h1>Poker Night <em>in America</em></h1>
+              </div>
+              <div className="compact-hero__intro">
+                <p>
+                  Big pots, bigger personalities, and {episodeCount()}+ episodes of cards-up cash-game action.
+                </p>
+                <div className="compact-hero__links">
+                  <a href={site.watchLive[0].url} target="_blank" rel="noopener noreferrer">Watch live <span>▶</span></a>
+                  <Link href="/episodes">Browse every episode →</Link>
+                </div>
               </div>
             </div>
-            <div className="episode-rail">
-              {latest.slice(1).map((episode, index) => (
-                <a key={`${episode.title}-${index}`} href={ytUrl(episode.youtubeId)} target="_blank" rel="noopener noreferrer">
-                  <span>{String(index + 2).padStart(2, "0")}</span>
-                  <strong>{episode.title}</strong>
-                  <small>{episode.season}</small>
-                </a>
-              ))}
+
+            <div className="compact-hero__grid">
+              <a className="hero-feature" href={ytUrl(featured.youtubeId)} target="_blank" rel="noopener noreferrer">
+                <Image src={ytThumb(featured.youtubeId, "max")} alt={featured.title} fill priority sizes="(max-width: 900px) 100vw, 66vw" />
+                <span className="hero-feature__shade" />
+                <span className="hero-feature__play" aria-hidden="true">▶</span>
+                <span className="hero-feature__copy">
+                  <span className="eyebrow eyebrow--light">Featured episode</span>
+                  <strong>{featured.title}</strong>
+                  <small>{featured.season} · {featured.venue}</small>
+                </span>
+              </a>
+
+              <aside className="hero-queue" aria-label="Latest episodes">
+                <header>
+                  <div><span className="eyebrow">Straight from the felt</span><h2>Latest episodes</h2></div>
+                  <Link href="/episodes" aria-label="View all episodes">View all →</Link>
+                </header>
+                <div className="hero-queue__list">
+                  {latest.slice(1, 6).map((episode, index) => (
+                    <a key={`${episode.title}-${index}`} href={ytUrl(episode.youtubeId)} target="_blank" rel="noopener noreferrer">
+                      <b>{String(index + 1).padStart(2, "0")}</b>
+                      <span><strong>{episode.title}</strong><small>{episode.season} · {episode.venue}</small></span>
+                      <i aria-hidden="true">▶</i>
+                    </a>
+                  ))}
+                </div>
+              </aside>
+            </div>
+          </div>
+          <div className="compact-hero__footer">
+            <div className="wrap">
+              <span>Cards up. Cameras on.</span>
+              <span>♦</span>
+              <span>Live cash games on YouTube &amp; Twitch</span>
+              <a href={site.watchLive[1].url} target="_blank" rel="noopener noreferrer">Watch on Twitch ↗</a>
             </div>
           </div>
         </section>
