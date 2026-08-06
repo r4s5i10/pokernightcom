@@ -83,6 +83,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="archive-flow">
+        <div className="wrap archive-flow__heading">
+          <div>
+            <span className="flow-kicker flow-kicker--light"><i /> From the Poker Night archive</span>
+            <h2>Every hand<br /><em>has a story.</em></h2>
+          </div>
+          <p>Real tables, unforgettable personalities, and the moments between the cards that made Poker Night what it is.</p>
+        </div>
+
+        <div className="wrap archive-flow__gallery">
+          <figure className="archive-photo archive-photo--studio">
+            <Image src="/legacy/studio-night.jpg" alt="A lively Poker Night in America game filmed in the studio" fill sizes="(max-width: 700px) 92vw, 48vw" />
+            <figcaption><span>01</span> The game comes alive</figcaption>
+          </figure>
+          <figure className="archive-photo archive-photo--portrait">
+            <Image src="/legacy/player-portrait.jpg" alt="Poker player seated at a Poker Night table with chips" fill sizes="(max-width: 700px) 70vw, 24vw" />
+            <figcaption><span>02</span> Faces of the felt</figcaption>
+          </figure>
+          <figure className="archive-photo archive-photo--ladies">
+            <Image src="/legacy/ladies-night.jpg" alt="Players smiling together during Poker Night Ladies Night" fill sizes="(max-width: 700px) 86vw, 30vw" />
+            <figcaption><span>03</span> Ladies Night</figcaption>
+          </figure>
+          <figure className="archive-photo archive-photo--host">
+            <Image src="/legacy/poker-night-host.jpg" alt="Poker Night presenter speaking beside a television camera" fill sizes="(max-width: 700px) 74vw, 24vw" />
+            <figcaption><span>04</span> Behind the broadcast</figcaption>
+          </figure>
+          <figure className="archive-photo archive-photo--winner">
+            <Image src="/legacy/jason-koon-winner.jpg" alt="Jason Koon holding a poker championship trophy" fill sizes="(max-width: 700px) 70vw, 24vw" />
+            <figcaption><span>05</span> The winning moment</figcaption>
+          </figure>
+          <figure className="archive-photo archive-photo--phil">
+            <Image src="/legacy/phil-hellmuth.jpg" alt="Phil Hellmuth at the Poker Night in America table" fill sizes="(max-width: 700px) 86vw, 32vw" />
+            <figcaption><span>06</span> Legends at the table</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section className="watch-flow">
         <div className="watch-flow__curve" aria-hidden="true" />
         <div className="wrap watch-flow__inner">
