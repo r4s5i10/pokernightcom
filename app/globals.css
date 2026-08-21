@@ -313,6 +313,35 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .flow-button--white { color: var(--flow-black); background: #fff; }
 .flow-button--darkline { color: #fff; border: 1px solid rgba(255,255,255,.34); }
 
+/* Homepage lead — featured first-party story + Home Game standings */
+.home-dashboard { position: relative; overflow: hidden; padding: 82px 0 0; color: #fff; background: #090a0d; }
+.home-dashboard__suit { position: absolute; right: -90px; top: -205px; color: rgba(255,255,255,.025); font: 400 34rem/1 Georgia; rotate: -11deg; }
+.home-dashboard__heading { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr .8fr; gap: 75px; align-items: end; margin-bottom: 55px; }
+.home-dashboard__heading h1 { margin-top: 17px; font-size: clamp(4rem, 7vw, 7.4rem); }
+.home-dashboard__heading h1 em { display: block; margin-left: clamp(30px, 6vw, 95px); color: #ff5269; }
+.home-dashboard__heading > p { max-width: 465px; padding-bottom: 12px; color: #b8bac0; font-size: 1rem; line-height: 1.75; }
+.home-dashboard__grid { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.47fr) minmax(420px, .83fr); gap: 20px; align-items: stretch; }
+.home-lead-story { min-height: 680px; position: relative; display: block; overflow: hidden; color: #fff; background: #15161a; }
+.home-lead-story__image { position: absolute; inset: 0; }
+.home-lead-story__image img { object-fit: cover; object-position: center 27%; transition: transform .65s ease, filter .65s ease; }
+.home-lead-story:hover img { transform: scale(1.025); filter: saturate(1.08); }
+.home-lead-story__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,5,7,.98) 3%, rgba(4,5,7,.14) 72%), linear-gradient(90deg, rgba(4,5,7,.28), transparent 60%); }
+.home-lead-story__badge { position: absolute; z-index: 2; top: 28px; left: 28px; padding: 11px 14px; color: #fff; background: var(--flow-red); font-size: .61rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+.home-lead-story__copy { position: absolute; z-index: 2; left: clamp(27px, 4vw, 50px); right: clamp(27px, 4vw, 50px); bottom: clamp(30px, 4.4vw, 54px); display: flex; flex-direction: column; align-items: flex-start; }
+.home-lead-story__copy small { color: #ff536a; font-size: .65rem; font-weight: 850; letter-spacing: .11em; text-transform: uppercase; }
+.home-lead-story__copy strong { max-width: 830px; margin: 13px 0 20px; font: 700 clamp(2.6rem, 4.6vw, 5.2rem)/.95 var(--font-oswald); text-transform: uppercase; }
+.home-lead-story__copy em { padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.44); color: #fff; font-size: .68rem; font-style: normal; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+.leaderboard-card--hero { min-width: 0; height: 100%; padding-inline: 27px; }
+.leaderboard-card--hero > header { gap: 13px; }
+.leaderboard-card--hero > header strong { font-size: 1.18rem; }
+.leaderboard-card--hero .leaderboard-card__labels, .leaderboard-card--hero li { grid-template-columns: 43px minmax(0, 1fr) auto; gap: 10px; }
+.leaderboard-card--hero li { min-height: 68px; }
+.leaderboard-card--hero .leaderboard-card__player { gap: 9px; }
+.leaderboard-card--hero .leaderboard-card__player i { width: 33px; height: 33px; }
+.leaderboard-card--hero .leaderboard-card__player strong { font-size: .79rem; }
+.leaderboard-card--hero li > em { font-size: .82rem; }
+.flow-marquee--dashboard { margin-top: 54px; border-radius: 50% 50% 0 0 / 18px 18px 0 0; background: #15161a; }
+
 .flow-hero { min-height: 760px; position: relative; padding: 76px 0 0; background: radial-gradient(circle at 82% 16%, #f0f0f2 0, #fff 33%), #fff; }
 .flow-hero__collage { position: absolute; z-index: 0; width: 970px; height: 720px; right: -170px; bottom: 0; border-radius: 54% 0 0 0; background: #07080a url("/collage-bg.webp") center/cover no-repeat; opacity: .1; }
 .flow-hero__orb { position: absolute; z-index: 0; width: 520px; height: 520px; right: 8%; top: 8%; border: 1px solid rgba(217,19,50,.12); border-radius: 50%; box-shadow: 0 0 0 65px rgba(217,19,50,.025), 0 0 0 130px rgba(217,19,50,.016); }
@@ -616,6 +645,9 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .signup-flow__suit { position: absolute; right: -40px; bottom: -220px; color: rgba(255,255,255,.1); font: 400 34rem/1 Georgia; rotate: -10deg; }
 
 @media (max-width: 1050px) {
+  .home-dashboard__grid { grid-template-columns: 1fr; }
+  .home-lead-story { min-height: 650px; }
+  .leaderboard-card--hero { height: auto; }
   .flow-hero { padding-top: 60px; }
   .flow-hero__inner { grid-template-columns: .9fr 1.1fr; gap: 32px; }
   .flow-feature { height: 500px; }
@@ -630,6 +662,12 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 }
 
 @media (max-width: 800px) {
+  .home-dashboard { padding-top: 68px; }
+  .home-dashboard__heading { grid-template-columns: 1fr; gap: 28px; }
+  .home-dashboard__heading h1 { font-size: clamp(3.8rem, 14vw, 6rem); }
+  .home-dashboard__heading > p { padding-bottom: 0; }
+  .home-lead-story { min-height: 560px; }
+  .home-lead-story__copy strong { font-size: clamp(2.7rem, 8vw, 4.5rem); }
   .flow-hero { min-height: auto; padding-top: 50px; }
   .flow-hero__collage { width: 100%; right: 0; opacity: .06; }
   .flow-hero__orb { width: 390px; height: 390px; right: -180px; }
@@ -693,6 +731,21 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 }
 
 @media (max-width: 560px) {
+  .home-dashboard { padding-top: 54px; }
+  .home-dashboard__heading { margin-bottom: 36px; }
+  .home-dashboard__heading h1 { font-size: 3.75rem; }
+  .home-dashboard__heading h1 em { margin-left: 24px; }
+  .home-dashboard__heading > p { font-size: .88rem; }
+  .home-dashboard__grid { width: calc(100% + 40px); margin-left: -20px; gap: 12px; }
+  .home-lead-story { min-height: 510px; }
+  .home-lead-story__image img { object-position: 57% center; }
+  .home-lead-story__badge { top: 20px; left: 20px; }
+  .home-lead-story__copy { left: 20px; right: 20px; bottom: 28px; }
+  .home-lead-story__copy strong { font-size: 2.65rem; }
+  .leaderboard-card--hero { padding-inline: 16px; }
+  .leaderboard-card--hero > header { grid-template-columns: 1fr auto; }
+  .leaderboard-card--hero header > a { grid-column: 1 / -1; padding-top: 0; }
+  .flow-marquee--dashboard { margin-top: 38px; }
   .flow-hero { padding-top: 38px; }
   .flow-hero__copy h1 { margin-top: 15px; font-size: clamp(3.85rem, 19vw, 5.5rem); }
   .flow-hero__copy h1 em { margin-left: 22px; }
