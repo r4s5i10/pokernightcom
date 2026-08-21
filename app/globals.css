@@ -314,7 +314,7 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .flow-button--darkline { color: #fff; border: 1px solid rgba(255,255,255,.34); }
 
 /* Homepage lead — featured first-party story + Home Game standings */
-.home-dashboard { position: relative; overflow: hidden; padding: 82px 0 0; color: #fff; background: #090a0d; }
+.home-dashboard { position: relative; overflow: hidden; padding: 46px 0 0; color: #fff; background: #fff; }
 .home-dashboard__suit { position: absolute; right: -90px; top: -205px; color: rgba(255,255,255,.025); font: 400 34rem/1 Georgia; rotate: -11deg; }
 .home-dashboard__heading { position: relative; z-index: 1; display: grid; grid-template-columns: 1.2fr .8fr; gap: 75px; align-items: end; margin-bottom: 55px; }
 .home-dashboard__heading h1 { margin-top: 17px; font-size: clamp(4rem, 7vw, 7.4rem); }
@@ -662,7 +662,7 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 }
 
 @media (max-width: 800px) {
-  .home-dashboard { padding-top: 68px; }
+  .home-dashboard { padding-top: 32px; }
   .home-dashboard__heading { grid-template-columns: 1fr; gap: 28px; }
   .home-dashboard__heading h1 { font-size: clamp(3.8rem, 14vw, 6rem); }
   .home-dashboard__heading > p { padding-bottom: 0; }
@@ -731,7 +731,7 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 }
 
 @media (max-width: 560px) {
-  .home-dashboard { padding-top: 54px; }
+  .home-dashboard { padding-top: 18px; }
   .home-dashboard__heading { margin-bottom: 36px; }
   .home-dashboard__heading h1 { font-size: 3.75rem; }
   .home-dashboard__heading h1 em { margin-left: 24px; }

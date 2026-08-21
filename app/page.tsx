@@ -29,16 +29,7 @@ export default function HomePage() {
     <div className="flow-home">
       {featuredStory && (
         <section className="home-dashboard">
-          <div className="home-dashboard__suit" aria-hidden="true">♠</div>
           <div className="wrap">
-            <div className="home-dashboard__heading">
-              <div>
-                <span className="flow-kicker flow-kicker--light"><i /> From the Home Game</span>
-                <h1>Who’s up.<br /><em>Who’s chasing.</em></h1>
-              </div>
-              <p>Running profit and loss totals from {homeGameStats.title}, through {homeGameStats.lastUpdated}—plus the latest story from the table.</p>
-            </div>
-
             <div className="home-dashboard__grid">
               <Link className="home-lead-story" href={`/news/${featuredStory.slug}`}>
                 <span className="home-lead-story__image">
