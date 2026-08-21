@@ -509,6 +509,50 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .recap-hub__footer p { max-width: 620px; line-height: 1.65; }
 .recap-hub__footer a { flex: 0 0 auto; color: var(--flow-red); font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
 
+/* First-party editorial recap */
+.official-recap { color: #17181c; background: #fff; }
+.official-recap__hero { min-height: 720px; position: relative; display: flex; align-items: flex-end; overflow: hidden; color: #fff; background: #08090b; }
+.official-recap__hero > img { object-fit: cover; object-position: center 28%; }
+.official-recap__hero-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(5,6,8,.98) 4%, rgba(5,6,8,.44) 62%, rgba(5,6,8,.08)), linear-gradient(90deg, rgba(5,6,8,.62), transparent 64%); }
+.official-recap__hero-copy { position: relative; z-index: 2; padding-bottom: 72px; }
+.official-recap__hero-copy > a { display: inline-flex; gap: 12px; margin-bottom: 24px; padding-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,.42); font-size: .66rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.official-recap__hero h1 { max-width: 980px; margin: 18px 0 22px; font-size: clamp(4rem, 8.2vw, 8.3rem); }
+.official-recap__hero h1 em { color: #ff536a; font-style: normal; }
+.official-recap__hero-copy > p { max-width: 720px; color: #d5d6da; font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.55; }
+.official-recap__layout { display: grid; grid-template-columns: 190px minmax(0, 870px); justify-content: center; gap: clamp(55px, 8vw, 120px); padding-top: 92px; padding-bottom: 125px; }
+.official-recap__rail { position: sticky; top: 100px; height: fit-content; display: flex; flex-direction: column; padding-top: 9px; border-top: 3px solid var(--flow-red); }
+.official-recap__rail span { margin-top: 20px; color: #9a9ba0; font-size: .58rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.official-recap__rail strong { color: var(--flow-red); font: 700 4.6rem/1 var(--font-oswald); }
+.official-recap__rail b { margin-top: 6px; font-size: .7rem; line-height: 1.5; }
+.official-recap__body { min-width: 0; }
+.official-recap__body > p { margin: 0 0 26px; font-size: 1.02rem; line-height: 1.86; }
+.official-recap__body > p em { font-style: italic; }
+.official-recap__dek { margin-bottom: 36px !important; padding-bottom: 34px; border-bottom: 1px solid #dedfe2; font-size: clamp(1.35rem, 2.4vw, 2rem) !important; font-weight: 650; line-height: 1.48 !important; }
+.official-recap__body > h2 { margin: 74px 0 24px; font-size: clamp(2.5rem, 5vw, 4.8rem); line-height: .98; }
+.official-recap__figure { margin: 42px 0 58px; }
+.official-recap__figure > span { position: relative; display: block; aspect-ratio: 700/393; overflow: hidden; background: #0a0b0e; }
+.official-recap__figure img { object-fit: cover; }
+.official-recap__figure figcaption { padding-top: 12px; color: #797a80; font-size: .7rem; line-height: 1.5; }
+.official-recap__figure figcaption::before { content: "♦"; margin-right: 9px; color: var(--flow-red); }
+.official-recap__table-wrap { margin: 48px 0 68px; border: 1px solid #dedfe2; }
+.official-recap__table-title { min-height: 66px; display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 15px 22px; color: #fff; background: #111216; }
+.official-recap__table-title span { font: 700 1.2rem/1 var(--font-oswald); text-transform: uppercase; }
+.official-recap__table-title b { color: #a9aab0; font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; }
+.official-recap__table { width: 100%; border-collapse: collapse; }
+.official-recap__table th, .official-recap__table td { padding: 15px 22px; border-bottom: 1px solid #e5e5e7; text-align: left; }
+.official-recap__table th { color: #898a90; font-size: .58rem; letter-spacing: .12em; text-transform: uppercase; }
+.official-recap__table td { font-size: .86rem; font-weight: 700; }
+.official-recap__table th:nth-child(n+2), .official-recap__table td:nth-child(n+2) { text-align: right; }
+.official-recap__table tr:last-child td { border-bottom: 0; }
+.official-recap__table .is-positive { color: #168356; }
+.official-recap__table .is-negative { color: var(--flow-red); }
+.official-recap__endnote { position: relative; overflow: hidden; margin-top: 95px; padding: 55px; color: #fff; background: #111216; }
+.official-recap__endnote::after { content: "♠"; position: absolute; right: -38px; bottom: -125px; color: rgba(217,19,50,.22); font: 400 18rem/1 Georgia; }
+.official-recap__endnote > span { position: relative; z-index: 1; color: #ff536a; font-size: .62rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.official-recap__endnote h2 { position: relative; z-index: 1; margin: 14px 0 30px; font-size: clamp(2.8rem, 5vw, 4.5rem); }
+.official-recap__endnote > div { position: relative; z-index: 1; display: flex; gap: 28px; flex-wrap: wrap; }
+.official-recap__endnote a { padding-bottom: 5px; border-bottom: 1px solid rgba(255,255,255,.35); font-size: .65rem; font-weight: 850; letter-spacing: .09em; text-transform: uppercase; }
+
 .watch-flow { min-height: 720px; position: relative; padding: 132px 0 125px; color: #fff; background: var(--flow-black) url("/legacy/turning-stone-table.jpg") center/cover no-repeat; border-radius: 50% 50% 0 0 / 68px 68px 0 0; }
 .watch-flow::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 15% 78%, rgba(217,19,50,.38), transparent 31%), linear-gradient(90deg, rgba(8,9,12,.76), rgba(8,9,12,.96)); border-radius: inherit; }
 .watch-flow__curve { position: absolute; z-index: 1; width: 720px; height: 720px; left: -280px; bottom: -360px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; box-shadow: 0 0 0 85px rgba(255,255,255,.025), 0 0 0 170px rgba(255,255,255,.018); }
@@ -620,6 +664,11 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
   .recap-index { grid-template-columns: 1fr; }
   .recap-index > a, .recap-index > a:nth-child(odd), .recap-index > a:nth-child(even) { padding-inline: 0; border-right: 0; }
   .recap-index > a:hover { padding-inline: 14px; }
+  .official-recap__hero { min-height: 620px; }
+  .official-recap__layout { grid-template-columns: 1fr; gap: 45px; }
+  .official-recap__rail { position: static; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px 20px; }
+  .official-recap__rail strong { font-size: 3.5rem; }
+  .official-recap__rail span, .official-recap__rail b { margin-top: 0; }
   .leader-deck { grid-template-columns: repeat(2, 1fr); }
   .flow-heading, .shop-flow__title { grid-template-columns: 1fr; gap: 28px; }
   .flow-heading h2, .shop-flow__title h2 { font-size: clamp(3.8rem, 14vw, 6rem); }
@@ -691,6 +740,21 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
   .recap-hub__latest, .recap-hub__archive { padding: 72px 0 82px; }
   .recap-feature-grid--hub .recap-feature { min-height: 475px; }
   .recap-index > a { min-height: 116px; grid-template-columns: 48px 1fr 18px; gap: 12px; }
+  .official-recap__hero { min-height: 610px; }
+  .official-recap__hero-copy { padding-bottom: 48px; }
+  .official-recap__hero h1 { font-size: 4rem; }
+  .official-recap__hero > img { object-position: 58% center; }
+  .official-recap__layout { padding-top: 62px; padding-bottom: 85px; }
+  .official-recap__rail { grid-template-columns: 1fr 1fr; }
+  .official-recap__rail strong { font-size: 3rem; }
+  .official-recap__body > p { font-size: .95rem; line-height: 1.78; }
+  .official-recap__body > h2 { margin-top: 58px; font-size: 2.75rem; }
+  .official-recap__figure { width: calc(100% + 40px); margin-left: -20px; }
+  .official-recap__figure figcaption { padding-inline: 20px; }
+  .official-recap__table-wrap { overflow-x: auto; margin-inline: -10px; }
+  .official-recap__table th, .official-recap__table td { padding: 13px 14px; white-space: nowrap; }
+  .official-recap__table-title { align-items: flex-start; flex-direction: column; }
+  .official-recap__endnote { margin-top: 72px; padding: 42px 28px; }
   .leaderboard-card { padding: 24px 16px 15px; }
   .leaderboard-card > header { grid-template-columns: 1fr auto; }
   .leaderboard-card header > a { grid-column: 1 / -1; padding-top: 0; }

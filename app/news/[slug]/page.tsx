@@ -5,7 +5,9 @@ import type { Metadata } from "next";
 import { getNewsPosts, getPost, ytThumb, ytUrl } from "@/lib/data";
 
 export function generateStaticParams() {
-  return getNewsPosts().map((p) => ({ slug: p.slug }));
+  return getNewsPosts()
+    .filter((p) => p.slug !== "hellmuths-home-game-episode-30")
+    .map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
