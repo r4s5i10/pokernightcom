@@ -1,14 +1,13 @@
-# Exclude WordPress junk files with ? in filename (old permalink query strings)
-# These were created by wget and are not valid filenames for git
-*\?*
-*.html\?*
-
-# macOS
+node_modules
+.next
+out
+.env
+.env.*
+!.env.example
+*.sql
+*.sql.gz
+*.dump
+*.bak
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-
-# Thumbnails
-Thumbs.db
+*.tsbuildinfo
+next-env.d.ts

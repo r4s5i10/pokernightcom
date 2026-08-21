@@ -1,0 +1,19 @@
+[
+  {"id":4954,"name":"Unisex Jersey Short Sleeve V-Neck Tee","slug":"unisex-jersey-short-sleeve-v-neck-tee","minPrice":18.04,"maxPrice":22.35,"image":"/products/23733-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["White","Black","Asphalt","Red"]},
+  {"id":4812,"name":"Men’s Cotton Crew Tee","slug":"mens-cotton-crew-tee","minPrice":15.30,"maxPrice":21.98,"image":"/products/17429-1-510x510.jpg","sizes":["S","M","L","XL","2XL","3XL"],"colors":["Solid White","Solid Black","Heather Grey","Solid Heavy Metal","Solid Red"]},
+  {"id":17065,"name":"Men’s Sport Polo Shirt","slug":"mens-sport-polo-shirt","minPrice":34.05,"maxPrice":37.78,"image":"/products/84302-1-510x510.jpg","sizes":["S","M","L","XL","2XL","3XL"],"colors":["White","Black"]},
+  {"id":17020,"name":"Ladies’ V-Neck T-Shirt","slug":"ladies-v-neck-t-shirt","minPrice":17.08,"maxPrice":22.23,"image":"/products/78525-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["White","Black","Sport Grey","Charcoal"]},
+  {"id":4983,"name":"Women’s Favorite Tee","slug":"womens-favorite-tee","minPrice":15.53,"maxPrice":19.66,"image":"/products/17745-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["White","Black","Asphalt","Red"]},
+  {"id":16995,"name":"Unisex Jersey Tank","slug":"unisex-jersey-tank","minPrice":16.64,"maxPrice":26.85,"image":"/products/24639-1-510x510.jpg","sizes":["XS","S","M","L","XL","2XL"],"colors":["White","Black","Red"]},
+  {"id":4911,"name":"Unisex Jersey Long Sleeve Tee","slug":"unisex-jersey-long-sleeve-tee","minPrice":22.46,"maxPrice":27.43,"image":"/products/24996-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["White","Deep Heather","Black","Black Heather","Asphalt","Red"]},
+  {"id":4859,"name":"Unisex 3/4 Sleeve Baseball Tee","slug":"unisex-34-sleeve-baseball-tee","minPrice":24.73,"maxPrice":29.39,"image":"/products/39367-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["White / Red","White / Black"]},
+  {"id":16973,"name":"Men’s Sweatshirt","slug":"mens-sweatshirt","minPrice":27.46,"maxPrice":35.08,"image":"/products/36126-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["Arctic White","Jet Black","Red Hot Chilli"]},
+  {"id":17085,"name":"Unisex Full Zip Hoodie","slug":"unisex-full-zip-hoodie","minPrice":33.33,"maxPrice":34.35,"image":"/products/36485-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["Arctic White","Jet Black","Fire Red"]},
+  {"id":4784,"name":"Unisex College Hoodie","slug":"unisex-college-hoodie","minPrice":28.70,"maxPrice":38.27,"image":"/products/73938-1-510x510.jpg","sizes":["S","M","L","XL","2XL"],"colors":["Arctic White","Deep Black","Red Hot Chilli"]},
+  {"id":4874,"name":"Unisex Quarter-Zip Pullover","slug":"unisex-quarter-zip-pullover","minPrice":26.13,"maxPrice":33.59,"image":"/products/84685-1-510x510.jpg","sizes":["XS","S","M","L","XL","2XL","3XL","4XL"],"colors":["White","Black","True Red"]},
+  {"id":4853,"name":"Men’s Bomber Jacket","slug":"mens-bomber-jacket","minPrice":67.16,"maxPrice":67.16,"image":"/products/62179-1-510x510.jpg","sizes":["L"],"colors":[]},
+  {"id":5012,"name":"Trucker Cap","slug":"trucker-caps","minPrice":11.75,"maxPrice":11.75,"image":"/products/84650-1-510x510.jpg","sizes":["One size"],"colors":["Black"]},
+  {"id":5035,"name":"11oz Black Mug","slug":"11oz-black-mug","minPrice":7.46,"maxPrice":7.46,"image":"/products/65217-1-510x510.jpg","sizes":["11oz"],"colors":[]},
+  {"id":17053,"name":"Studio 52 Sleeve","slug":"studio-52-sleeve","minPrice":8.98,"maxPrice":8.98,"image":"/products/72422-1-510x510.jpg","sizes":["One size"],"colors":["White"]},
+  {"id":5043,"name":"Spun Polyester Square Pillow","slug":"spun-polyester-square-pillow","minPrice":16.40,"maxPrice":16.40,"image":"/products/41521-1-510x510.jpg","sizes":["14\" × 14\""],"colors":[]}
+]

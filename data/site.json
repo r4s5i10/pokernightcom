@@ -1,0 +1,25 @@
+{
+  "name": "Poker Night in America",
+  "tagline": "America's favorite televised cash game",
+  "watchLive": [
+    {"name": "YouTube", "url": "https://www.youtube.com/pokernightinamerica"},
+    {"name": "Twitch", "url": "https://www.twitch.tv/pokernighttv"},
+    {"name": "Plex Live TV", "url": "https://watch.plex.tv/live-tv/channel/poker-night-tv"},
+    {"name": "Local Now", "url": "https://localnow.com/channels/epg-poker-night-in-america"},
+    {"name": "SportsTribal TV", "url": "https://www.sportstribal.tv/home/channel/poker-night/"}
+  ],
+  "social": [
+    {"name": "YouTube", "url": "https://www.youtube.com/pokernightinamerica"},
+    {"name": "Twitch", "url": "https://www.twitch.tv/pokernighttv"},
+    {"name": "Facebook", "url": "https://www.facebook.com/pokernightinamerica"},
+    {"name": "Twitter", "url": "https://twitter.com/pokernighttv"}
+  ],
+  "presentedBy": {"name": "BetRivers", "url": "https://www.betrivers.com/"},
+  "app": {
+    "name": "Poker Night in America \u2014 Be On TV",
+    "ios": "https://itunes.apple.com/us/app/poker-night-in-america-be-on-tv/id1230057073?mt=8",
+    "blurb": "Play the free Poker Night in America social poker app \u2014 come back every day for huge bonuses and free chips, and win a chance to play poker on TV."
+  },
+  "coverage": "Poker Night in America also re-airs syndicated episodes on regional sports networks across the United States, reaching an additional 28 million homes in 27 states. In an average week, Poker Night in America airs every day of the week, over 25 combined times.",
+  "newsletter": {"heading": "Want to win a chance to play poker on TV?", "sub": "Join our newsletter for show news, live streams, and chances to play."}
+}
