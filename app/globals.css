@@ -451,6 +451,64 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
 .leader-card > strong { position: relative; z-index: 1; font: 700 clamp(1.45rem, 2.4vw, 2.4rem)/.98 var(--font-oswald); text-transform: uppercase; }
 .leader-card > em { position: relative; z-index: 1; margin-top: 12px; color: var(--flow-red); font-size: .88rem; font-style: normal; font-weight: 850; }
 
+/* Hellmuth's Home Game coverage — linked, attributed PokerNews recap hub */
+.recaps-flow { padding: 125px 0 115px; color: #fff; background: #111216; }
+.recaps-flow__heading { display: grid; grid-template-columns: 1.25fr .75fr; gap: 80px; align-items: end; margin-bottom: 52px; }
+.recaps-flow__heading h2 { margin-top: 16px; font-size: clamp(4rem, 7vw, 7rem); }
+.recaps-flow__heading h2 em, .recap-hub__hero h1 em { color: #ff4961; font-style: normal; }
+.recaps-flow__intro { max-width: 470px; padding-bottom: 9px; }
+.recaps-flow__intro p { color: #b9bac0; line-height: 1.75; }
+.recaps-flow__intro a, .recaps-flow__credit a { display: inline-flex; gap: 16px; margin-top: 25px; padding-bottom: 6px; color: #fff; border-bottom: 1px solid rgba(255,255,255,.38); font-size: .7rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.recap-feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+.recap-feature { min-height: 490px; position: relative; display: block; overflow: hidden; color: #fff; background: #08090b; }
+.recap-feature:first-child { border-radius: 46% 0 0 0 / 19% 0 0 0; }
+.recap-feature:last-child { border-radius: 0 46% 0 0 / 0 19% 0 0; }
+.recap-feature__image { position: absolute; inset: 0; }
+.recap-feature__image img { object-fit: cover; transition: transform .5s ease; }
+.recap-feature:nth-child(1) img { object-position: 65% center; }
+.recap-feature:nth-child(2) img { object-position: center; }
+.recap-feature:nth-child(3) img { object-position: center 28%; }
+.recap-feature:hover img { transform: scale(1.035); }
+.recap-feature__shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(4,5,7,.98), rgba(4,5,7,.12) 75%), linear-gradient(90deg, rgba(4,5,7,.36), transparent 55%); }
+.recap-feature__number { position: absolute; z-index: 2; top: 30px; left: 28px; padding: 9px 12px; color: #fff; background: var(--flow-red); font: 850 .66rem/1 var(--font-inter); letter-spacing: .12em; }
+.recap-feature__copy { position: absolute; z-index: 2; left: 28px; right: 28px; bottom: 28px; display: flex; flex-direction: column; align-items: flex-start; }
+.recap-feature__copy small { color: #ff536a; font-size: .61rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+.recap-feature__copy strong { margin: 11px 0 17px; font: 700 clamp(1.45rem, 2.2vw, 2.35rem)/1.05 var(--font-oswald); text-transform: uppercase; }
+.recap-feature__copy em { color: #d3d4d8; font-size: .68rem; font-style: normal; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.recaps-flow__credit { min-height: 72px; display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-top: 25px; color: #8f9096; font-size: .75rem; }
+.recaps-flow__credit b { color: #fff; }
+.recaps-flow__credit a { flex: 0 0 auto; margin-top: 0; }
+
+.recap-hub { background: #fff; }
+.recap-hub__hero { position: relative; overflow: hidden; padding: 115px 0 100px; color: #fff; background: #0d0e12; }
+.recap-hub__hero::after { content: "♠"; position: absolute; right: -80px; bottom: -300px; color: rgba(217,19,50,.16); font: 400 38rem/1 Georgia; rotate: -12deg; }
+.recap-hub__hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.25fr .75fr; gap: 80px; align-items: end; }
+.recap-hub__hero h1 { margin-top: 20px; font-size: clamp(4rem, 8vw, 8rem); }
+.recap-hub__dek { max-width: 470px; padding-bottom: 12px; }
+.recap-hub__dek p { margin-bottom: 22px; color: #fff; font-size: 1.05rem; line-height: 1.75; }
+.recap-hub__dek span { color: #92949b; font-size: .76rem; line-height: 1.65; }
+.recap-hub__latest { padding: 85px 0 105px; color: #fff; background: #111216; }
+.recap-hub__section-title { display: flex; justify-content: space-between; margin-bottom: 25px; color: #8f9096; font-size: .68rem; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+.recap-hub__section-title b { color: #ff536a; }
+.recap-feature-grid--hub .recap-feature { min-height: 550px; }
+.recap-hub__archive { padding: 105px 0 125px; }
+.recap-hub__archive-heading { display: grid; grid-template-columns: 1fr auto; gap: 50px; align-items: end; margin-bottom: 45px; }
+.recap-hub__archive-heading h2 { margin-top: 15px; font-size: clamp(3.8rem, 7vw, 7rem); }
+.recap-hub__archive-heading p { max-width: 300px; padding-bottom: 10px; color: var(--muted); line-height: 1.6; text-align: right; }
+.recap-index { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #d8d9dc; }
+.recap-index > a { min-height: 126px; display: grid; grid-template-columns: 62px 1fr 22px; gap: 18px; align-items: center; padding: 22px 25px 22px 0; border-bottom: 1px solid #d8d9dc; transition: background .25s, padding .25s; }
+.recap-index > a:nth-child(odd) { padding-right: 35px; border-right: 1px solid #d8d9dc; }
+.recap-index > a:nth-child(even) { padding-left: 35px; }
+.recap-index > a:hover { padding-inline: 22px; background: #f3f3f5; }
+.recap-index__episode { color: var(--flow-red); font: 800 .72rem/1 var(--font-oswald); letter-spacing: .1em; }
+.recap-index__copy { display: flex; flex-direction: column; gap: 8px; }
+.recap-index__copy strong { font: 700 clamp(1.05rem, 1.6vw, 1.45rem)/1.12 var(--font-oswald); text-transform: uppercase; }
+.recap-index__copy small { color: #85868c; font-size: .63rem; font-weight: 750; letter-spacing: .07em; text-transform: uppercase; }
+.recap-index__arrow { color: #999aa0; }
+.recap-hub__footer { display: flex; justify-content: space-between; gap: 40px; margin-top: 35px; color: #77787d; font-size: .72rem; }
+.recap-hub__footer p { max-width: 620px; line-height: 1.65; }
+.recap-hub__footer a { flex: 0 0 auto; color: var(--flow-red); font-weight: 850; letter-spacing: .08em; text-transform: uppercase; }
+
 .watch-flow { min-height: 720px; position: relative; padding: 132px 0 125px; color: #fff; background: var(--flow-black) url("/legacy/turning-stone-table.jpg") center/cover no-repeat; border-radius: 50% 50% 0 0 / 68px 68px 0 0; }
 .watch-flow::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 15% 78%, rgba(217,19,50,.38), transparent 31%), linear-gradient(90deg, rgba(8,9,12,.76), rgba(8,9,12,.96)); border-radius: inherit; }
 .watch-flow__curve { position: absolute; z-index: 1; width: 720px; height: 720px; left: -280px; bottom: -360px; border: 1px solid rgba(255,255,255,.1); border-radius: 50%; box-shadow: 0 0 0 85px rgba(255,255,255,.025), 0 0 0 170px rgba(255,255,255,.018); }
@@ -552,6 +610,16 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
   .stats-flow { padding: 100px 0; }
   .stats-flow__heading { grid-template-columns: 1fr; gap: 28px; }
   .stats-flow__heading h2 { font-size: clamp(3.8rem, 14vw, 6rem); }
+  .recaps-flow__heading, .recap-hub__hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .recaps-flow__heading h2 { font-size: clamp(3.8rem, 14vw, 6rem); }
+  .recap-feature-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .recap-feature-grid::-webkit-scrollbar { display: none; }
+  .recap-feature { min-width: 78%; scroll-snap-align: center; border-radius: 0 !important; }
+  .recap-hub__archive-heading { grid-template-columns: 1fr; gap: 20px; }
+  .recap-hub__archive-heading p { text-align: left; }
+  .recap-index { grid-template-columns: 1fr; }
+  .recap-index > a, .recap-index > a:nth-child(odd), .recap-index > a:nth-child(even) { padding-inline: 0; border-right: 0; }
+  .recap-index > a:hover { padding-inline: 14px; }
   .leader-deck { grid-template-columns: repeat(2, 1fr); }
   .flow-heading, .shop-flow__title { grid-template-columns: 1fr; gap: 28px; }
   .flow-heading h2, .shop-flow__title h2 { font-size: clamp(3.8rem, 14vw, 6rem); }
@@ -614,6 +682,15 @@ input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid 
   .archive-photo--phil img { object-position: 68% center; }
   .stats-flow { padding: 82px 0; }
   .stats-flow__heading h2 { font-size: 3.75rem; }
+  .recaps-flow { padding: 80px 0 72px; }
+  .recaps-flow__heading h2 { font-size: 3.75rem; }
+  .recap-feature { min-width: 88%; min-height: 455px; }
+  .recaps-flow__credit, .recap-hub__footer { align-items: flex-start; flex-direction: column; }
+  .recap-hub__hero { padding: 80px 0 70px; }
+  .recap-hub__hero h1 { font-size: 4rem; }
+  .recap-hub__latest, .recap-hub__archive { padding: 72px 0 82px; }
+  .recap-feature-grid--hub .recap-feature { min-height: 475px; }
+  .recap-index > a { min-height: 116px; grid-template-columns: 48px 1fr 18px; gap: 12px; }
   .leaderboard-card { padding: 24px 16px 15px; }
   .leaderboard-card > header { grid-template-columns: 1fr auto; }
   .leaderboard-card header > a { grid-column: 1 / -1; padding-top: 0; }
