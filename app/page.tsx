@@ -17,8 +17,8 @@ const platforms = [
 
 export default function HomePage() {
   const latest = getLatestEpisodes(7);
-  const featured = latest[0];
   const news = getNewsPosts().slice(0, 3);
+  const featuredStory = news[0];
   const channelVideos = latest.slice(0, 6);
   const statLeaders = homeGameStats.players.slice(0, 7);
   const featuredRecaps = homeGameRecaps.slice(0, 3);
@@ -27,45 +27,53 @@ export default function HomePage() {
 
   return (
     <div className="flow-home">
-      {featured && (
-        <section className="flow-hero">
-          <div className="flow-hero__collage" aria-hidden="true" />
-          <div className="flow-hero__orb" aria-hidden="true" />
-
-          <div className="wrap flow-hero__inner">
-            <div className="flow-hero__copy">
-              <span className="flow-kicker"><i /> America’s televised cash game</span>
-              <h1><span>Poker Night</span><em>in America</em></h1>
-              <p>Big pots. Big personalities. Zero scripts. Pull up a chair for the cash game that never plays it safe.</p>
-              <div className="flow-actions">
-                <a className="flow-button flow-button--red" href={site.watchLive[0].url} target="_blank" rel="noopener noreferrer">
-                  <span className="flow-button__play">▶</span> Watch live
-                </a>
-                <Link className="flow-button flow-button--line" href="/episodes">Explore every episode</Link>
+      {featuredStory && (
+        <section className="home-dashboard">
+          <div className="home-dashboard__suit" aria-hidden="true">♠</div>
+          <div className="wrap">
+            <div className="home-dashboard__heading">
+              <div>
+                <span className="flow-kicker flow-kicker--light"><i /> From the Home Game</span>
+                <h1>Who’s up.<br /><em>Who’s chasing.</em></h1>
               </div>
-              <div className="flow-hero__proof">
-                <strong>{episodeCount()}+</strong>
-                <span>episodes of cards-up<br />cash-game action</span>
-              </div>
+              <p>Running profit and loss totals from {homeGameStats.title}, through {homeGameStats.lastUpdated}—plus the latest story from the table.</p>
             </div>
 
-            <a className="flow-feature" href={ytUrl(featured.youtubeId)} target="_blank" rel="noopener noreferrer">
-              <span className="flow-feature__image">
-                <Image src={ytThumb(featured.youtubeId, "max")} alt={featured.title} fill priority sizes="(max-width: 850px) 94vw, 58vw" />
-              </span>
-              <span className="flow-feature__shade" />
-              <span className="flow-feature__top"><b>Now playing</b><i>Season 5</i></span>
-              <span className="flow-feature__play" aria-hidden="true">▶</span>
-              <span className="flow-feature__caption">
-                <small>Featured episode</small>
-                <strong>{featured.title}</strong>
-                <span>{featured.venue}</span>
-              </span>
-            </a>
-          </div>
+            <div className="home-dashboard__grid">
+              <Link className="home-lead-story" href={`/news/${featuredStory.slug}`}>
+                <span className="home-lead-story__image">
+                  <Image src={featuredStory.youtubeId ? ytThumb(featuredStory.youtubeId, "max") : featuredStory.image || "/pnia.webp"} alt={featuredStory.title} fill priority sizes="(max-width: 900px) 100vw, 62vw" />
+                </span>
+                <span className="home-lead-story__shade" />
+                <span className="home-lead-story__badge">Latest Poker Night story</span>
+                <span className="home-lead-story__copy">
+                  <small>{featuredStory.categories[0] || "News"} · {featuredStory.date}</small>
+                  <strong>{featuredStory.title}</strong>
+                  <em>Read the official recap <span>↗</span></em>
+                </span>
+              </Link>
 
-          <div className="flow-marquee" aria-label="Poker Night highlights">
-            <div><span>Cards up</span><i>♦</i><span>Cameras on</span><i>♠</i><span>Big pots</span><i>♥</i><span>Bigger personalities</span><i>♣</i><span>Cards up</span></div>
+              <div className="leaderboard-card leaderboard-card--hero">
+                <header>
+                  <div><strong>Profit / Loss leaderboard</strong><span>{homeGameStats.period}</span></div>
+                  <select aria-label="Leaderboard period" defaultValue="all"><option value="all">All sessions</option></select>
+                  <a href={homeGameStats.sourceUrl} target="_blank" rel="noopener noreferrer">View sheet ↗</a>
+                </header>
+                <div className="leaderboard-card__labels"><span>Rank</span><span>Player</span><span>Net</span></div>
+                <ol>
+                  {statLeaders.map((player, index) => (
+                    <li key={player.name}>
+                      <b>{String(index + 1).padStart(2, "0")}</b>
+                      <span className="leaderboard-card__player"><i>{initials(player.name)}</i><strong>{player.name}</strong></span>
+                      <em className={player.profitLoss >= 0 ? "is-positive" : "is-negative"}>{formatMoney(player.profitLoss)}</em>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div className="flow-marquee flow-marquee--dashboard" aria-label="Poker Night highlights">
+            <div><span>Latest news</span><i>♦</i><span>Home Game standings</span><i>♠</i><span>Cards up</span><i>♥</i><span>Cameras on</span><i>♣</i><span>Latest news</span></div>
           </div>
         </section>
       )}
@@ -152,47 +160,6 @@ export default function HomePage() {
             <Image src="/legacy/phil-hellmuth.jpg" alt="Phil Hellmuth at the Poker Night in America table" fill sizes="(max-width: 700px) 86vw, 32vw" />
             <figcaption><span>06</span> Legends at the table</figcaption>
           </figure>
-        </div>
-      </section>
-
-      <section className="stats-flow">
-        <div className="wrap">
-          <div className="stats-flow__heading">
-            <div><span className="flow-kicker flow-kicker--light"><i /> From the home game</span><h2>Who’s up.<br /><em>Who’s chasing.</em></h2></div>
-            <p>Running profit and loss totals from {homeGameStats.title}, through {homeGameStats.lastUpdated}.</p>
-          </div>
-
-          <div className="stats-flow__layout">
-            <div className="leaderboard-card">
-              <header>
-                <div><strong>Profit / Loss leaderboard</strong><span>{homeGameStats.period}</span></div>
-                <select aria-label="Leaderboard period" defaultValue="all"><option value="all">All sessions</option></select>
-                <a href={homeGameStats.sourceUrl} target="_blank" rel="noopener noreferrer">View sheet ↗</a>
-              </header>
-              <div className="leaderboard-card__labels"><span>Rank</span><span>Player</span><span>Net</span></div>
-              <ol>
-                {statLeaders.map((player, index) => (
-                  <li key={player.name}>
-                    <b>{String(index + 1).padStart(2, "0")}</b>
-                    <span className="leaderboard-card__player"><i>{initials(player.name)}</i><strong>{player.name}</strong></span>
-                    <em className={player.profitLoss >= 0 ? "is-positive" : "is-negative"}>{formatMoney(player.profitLoss)}</em>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            <div className="leader-deck" aria-label="Home game leaders">
-              {homeGameStats.players.slice(0, 4).map((player, index) => (
-                <article className="leader-card" key={player.name}>
-                  <span className="leader-card__rank">0{index + 1}</span>
-                  <span className="leader-card__avatar">{initials(player.name)}</span>
-                  <span className="leader-card__eyebrow">Home game leader</span>
-                  <strong>{player.name}</strong>
-                  <em>{formatMoney(player.profitLoss)}</em>
-                </article>
-              ))}
-            </div>
-          </div>
         </div>
       </section>
 
