@@ -5,6 +5,7 @@ import ProductCard from "@/components/ProductCard";
 import { episodeCount, getLatestEpisodes, getNewsPosts, site, ytThumb, ytUrl } from "@/lib/data";
 import { products } from "@/lib/products";
 import homeGameStats from "@/data/home-game-stats.json";
+import { homeGameRecaps, recapImages } from "@/data/home-game-recaps";
 
 const platforms = [
   { name: "YouTube", image: "/logo-youtube.png", url: site.watchLive[0].url },
@@ -20,6 +21,7 @@ export default function HomePage() {
   const news = getNewsPosts().slice(0, 3);
   const channelVideos = latest.slice(0, 6);
   const statLeaders = homeGameStats.players.slice(0, 7);
+  const featuredRecaps = homeGameRecaps.slice(0, 3);
   const formatMoney = (value: number) => `${value >= 0 ? "+" : "−"}$${Math.abs(value).toLocaleString("en-US")}`;
   const initials = (name: string) => name.split(/\s+/).map((part) => part[0]).join("").slice(0, 2).toUpperCase();
 
@@ -190,6 +192,43 @@ export default function HomePage() {
                 </article>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="recaps-flow">
+        <div className="wrap">
+          <div className="recaps-flow__heading">
+            <div>
+              <span className="flow-kicker flow-kicker--light"><i /> Hellmuth’s Home Game in the news</span>
+              <h2>Every episode.<br /><em>Every headline.</em></h2>
+            </div>
+            <div className="recaps-flow__intro">
+              <p>Independent episode coverage from PokerNews, collected here so fans can follow the full Home Game story.</p>
+              <Link href="/news/hellmuths-home-game">Explore all 30 episodes <span>↗</span></Link>
+            </div>
+          </div>
+
+          <div className="recap-feature-grid">
+            {featuredRecaps.map((recap, index) => (
+              <a className="recap-feature" key={recap.url} href={recap.url} target="_blank" rel="noopener noreferrer">
+                <span className="recap-feature__image">
+                  <Image src={recapImages[index]} alt="" fill sizes="(max-width: 800px) 88vw, 33vw" />
+                </span>
+                <span className="recap-feature__shade" />
+                <span className="recap-feature__number">EP {recap.episodes}</span>
+                <span className="recap-feature__copy">
+                  <small>PokerNews coverage · {recap.published}</small>
+                  <strong>{recap.title}</strong>
+                  <em>Read the original article ↗</em>
+                </span>
+              </a>
+            ))}
+          </div>
+
+          <div className="recaps-flow__credit">
+            <span><b>Coverage by PokerNews</b> · Headlines link to the original reporting on PokerNews.com.</span>
+            <Link href="/news/hellmuths-home-game">View the complete recap library <span>→</span></Link>
           </div>
         </div>
       </section>
